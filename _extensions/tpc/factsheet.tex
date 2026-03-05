@@ -1,0 +1,153 @@
+% TPC Factsheet LaTeX Template
+\documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{fontspec}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{float}
+
+% Pandoc bounded image macro — constrain images to text width
+\makeatletter
+\newcommand{\pandocbounded}[1]{%
+  \begingroup
+  \setbox0=\hbox{#1}%
+  \ifdim\wd0>\textwidth
+    \resizebox{\textwidth}{!}{#1}%
+  \else
+    #1%
+  \fi
+  \endgroup
+}
+\makeatother
+
+% TPC colors
+\definecolor{deepblue}{RGB}{23,74,124}
+\definecolor{teal}{RGB}{0,139,176}
+\definecolor{poppy}{RGB}{240,87,62}
+\definecolor{lightgray}{RGB}{188,190,192}
+\definecolor{darkgray}{RGB}{92,88,89}
+
+% Font setup — use Avenir TPC TTF files bundled with the extension
+\setmainfont{AvenirTPC}[
+  Path = _extensions/tpc/fonts/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic
+]
+
+% Section formatting
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{deepblue}\MakeUppercase}
+  {}{0em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{deepblue}\MakeUppercase}
+  {}{0em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{white}}
+  {}{0em}{}
+
+% Colored box environments
+\newtcolorbox{box-deepblue}{
+  colback=deepblue, colframe=deepblue,
+  colupper=white, fontupper=\normalsize,
+  boxrule=0pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=6pt, after skip=6pt
+}
+\newtcolorbox{box-teal}{
+  colback=teal, colframe=teal,
+  colupper=white, fontupper=\normalsize,
+  boxrule=0pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=6pt, after skip=6pt
+}
+\newtcolorbox{box-light}{
+  colback=lightgray!20, colframe=lightgray!20,
+  boxrule=0pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=6pt, after skip=6pt
+}
+
+% Sidebar environment
+\newtcolorbox{sidebarbox}{
+  colback=white, colframe=lightgray,
+  boxrule=0pt, leftrule=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=6pt, after skip=6pt
+}
+
+% Note box
+\newtcolorbox{notebox}{
+  colback=lightgray!20, colframe=poppy,
+  boxrule=0pt, leftrule=4pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=6pt, after skip=6pt
+}
+
+% Header/footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\color{darkgray}\thepage}
+
+% Hyperlink styling
+\hypersetup{
+  colorlinks=true,
+  linkcolor=deepblue,
+  urlcolor=teal,
+  citecolor=deepblue
+}
+
+% Tight list support (Pandoc)
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% CSL refs support (Pandoc)
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}[2]{}{}
+$endif$
+
+\begin{document}
+
+% Title block
+\begin{flushleft}
+\includegraphics[height=1.2cm]{_extensions/tpc/logo.png}
+
+\vspace{0.5em}
+{\Large\bfseries\color{black} $title$}
+
+$if(subtitle)$
+\vspace{0.2em}
+{\normalsize\color{darkgray} $subtitle$}
+$endif$
+
+$if(by-author)$
+\vspace{0.2em}
+{\small\color{lightgray}
+$for(by-author)$$it.name.literal$$sep$, $endfor$}
+$endif$
+
+$if(date)$
+\vspace{0.1em}
+{\small\color{lightgray} $date$}
+$endif$
+\end{flushleft}
+
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.5em}
+
+$body$
+
+\end{document}
