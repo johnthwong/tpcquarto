@@ -169,7 +169,8 @@ $endif$
   % Title and subtitle — left side
   \node[anchor=west, inner sep=0pt, text width=0.6\paperwidth] at ([xshift=0.5in, yshift=-1.1cm]current page.north west)
     {{\fontsize{14}{17}\bfseries\color{white} $title$}%
-    $if(subtitle)$\par\vspace{0.15em}{\fontsize{9}{12}\selectfont\color{lightgray} $subtitle$}$endif$};
+    $if(subtitle)$\par\vspace{0.15em}{\fontsize{9}{12}\selectfont\color{lightgray} $subtitle$}$endif$%
+    $if(date)$\par\vspace{0.15em}{\fontsize{9}{12}\selectfont\color{lightgray} $date$}$endif$};
 \end{tikzpicture}%
 \noindent
 
