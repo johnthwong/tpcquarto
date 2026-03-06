@@ -39,3 +39,15 @@ function Div(el)
 
   return el
 end
+
+-- Center images in LaTeX with spacing
+function Image(img)
+  if FORMAT:match("latex") then
+    local width = img.attributes.width or "\\linewidth"
+    if width:match("%%") then
+      width = tonumber(width:match("(%d+)")) / 100 .. "\\linewidth"
+    end
+    return pandoc.RawInline("latex",
+      "\n\\vspace{0.8em}\n{\\centering\\includegraphics[width=" .. width .. ",keepaspectratio]{" .. img.src .. "}\\par}\n\\vspace{0.5em}\n")
+  end
+end

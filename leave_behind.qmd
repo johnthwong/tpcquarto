@@ -13,13 +13,19 @@ The Tax Policy Center's tariff models are the most sophisticated models housed o
 
 TPC's tariff models have several unique capabilities:
 
-- Computes detailed tariff rates on each product from each country, by the day.
-- Traces tariffs from intermediate imports, such as steel, to US-produced goods like automobiles and buildings.
-- Models the impact of tariffs, and any remedial policies, on families across income and demographic spectrums, using hundreds of thousands of tax records.
+- **Detailed tariff rates** — Computes detailed tariff rates on each product from each country, by the day.
+- **Supply chain tracing** — Traces tariffs from intermediate imports, such as steel, to US-produced goods like automobiles and buildings.
+- **Household-level impact** — Models the impact of tariffs, and any remedial policies, on families across income and demographic spectrums, using hundreds of thousands of tax records.
 
-## What We Can Produce for Cities
+![](burden_alluvial.png){width=85%}
 
-For each industry in your county, TPC can estimate how tariffs will affect output, employment, earnings, and value-added.
+## What We Can Produce for States and Cities
+
+TPC can produce tariff impact estimates tailored to your state, county, or metropolitan statistical area.
+
+- **Industry-level analysis** — For each industry in your area, estimate changes in output, employment, earnings, and value-added driven by tariffs on imported inputs.
+- **Household burden estimates** — Measure how much tariffs cost families at different income levels in your state, using detailed consumption and income data matched to local demographics.
+- **Government cost impact** — Quantify how tariffs raise procurement costs for state governments, including construction materials, vehicles, and equipment.
 
 ## What We Have Found
 
@@ -27,8 +33,6 @@ For each industry in your county, TPC can estimate how tariffs will affect outpu
 - Tariffs makes construction more expensive, raising construction cost by one percent in real terms.
 - Automobiles purchased by consumers are 5.6 percent more expensive due to current tariffs.
 - In terms of distribution, tariffs behave like a flat tax, adding one percentage point to tax rates regardless of income.
-
-![Cost of Tariffs, as Levied vs. on Final Goods and Services](burden_alluvial.png){width=80%}
 
 ## How Our Model Works
 

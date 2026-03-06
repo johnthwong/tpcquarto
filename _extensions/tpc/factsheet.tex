@@ -1,7 +1,7 @@
 % TPC Factsheet LaTeX Template
-\documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{article}
+\documentclass[$if(fontsize)$$fontsize$$else$10pt$endif$]{article}
 
-\usepackage[margin=1in]{geometry}
+\usepackage[top=2.0cm, bottom=0.5in, left=0.5in, right=0.5in, headheight=1cm, headsep=0cm]{geometry}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{multicol}
@@ -16,14 +16,18 @@
 \usepackage{titlesec}
 \usepackage{parskip}
 \usepackage{float}
+\usepackage{calc}
+\usepackage{tikz}
+% Line spacing
+\linespread{1.25}
 
 % Pandoc bounded image macro — constrain images to text width
 \makeatletter
 \newcommand{\pandocbounded}[1]{%
   \begingroup
   \setbox0=\hbox{#1}%
-  \ifdim\wd0>\textwidth
-    \resizebox{\textwidth}{!}{#1}%
+  \ifdim\wd0>\linewidth
+    \resizebox{\linewidth}{!}{#1}%
   \else
     #1%
   \fi
@@ -37,8 +41,9 @@
 \definecolor{poppy}{RGB}{240,87,62}
 \definecolor{lightgray}{RGB}{188,190,192}
 \definecolor{darkgray}{RGB}{92,88,89}
+\definecolor{bglight}{RGB}{245,247,249}
 
-% Font setup — use Avenir TPC TTF files bundled with the extension
+% Font setup
 \setmainfont{AvenirTPC}[
   Path = _extensions/tpc/fonts/,
   Extension = .ttf,
@@ -48,13 +53,21 @@
   BoldItalicFont = *-BoldItalic
 ]
 
-% Section formatting
+% Content margins (used inside the body)
+\newlength{\contentmargin}
+\setlength{\contentmargin}{0.75in}
+
+% Section formatting — teal accent bar before section titles
 \titleformat{\section}
-  {\normalfont\large\bfseries\color{deepblue}\MakeUppercase}
-  {}{0em}{}
+  {\normalfont\large\bfseries\color{deepblue}}
+  {}{0em}{}[\vspace{-0.3em}{\color{teal}\rule{2cm}{2pt}}]
+\titlespacing*{\section}{0pt}{1.2em}{0.4em}
+
 \titleformat{\subsection}
   {\normalfont\normalsize\bfseries\color{deepblue}\MakeUppercase}
   {}{0em}{}
+\titlespacing*{\subsection}{0pt}{1em}{0.3em}
+
 \titleformat{\subsubsection}
   {\normalfont\normalsize\bfseries\color{white}}
   {}{0em}{}
@@ -63,42 +76,62 @@
 \newtcolorbox{box-deepblue}{
   colback=deepblue, colframe=deepblue,
   colupper=white, fontupper=\normalsize,
-  boxrule=0pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=6pt, after skip=6pt
+  boxrule=0pt, arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt,
+  before skip=8pt, after skip=8pt
 }
 \newtcolorbox{box-teal}{
   colback=teal, colframe=teal,
   colupper=white, fontupper=\normalsize,
-  boxrule=0pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=6pt, after skip=6pt
+  boxrule=0pt, arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt,
+  before skip=8pt, after skip=8pt
 }
 \newtcolorbox{box-light}{
-  colback=lightgray!20, colframe=lightgray!20,
-  boxrule=0pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=6pt, after skip=6pt
+  colback=bglight, colframe=bglight,
+  boxrule=0pt, arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt,
+  before skip=8pt, after skip=8pt
 }
 
 % Sidebar environment
 \newtcolorbox{sidebarbox}{
-  colback=white, colframe=lightgray,
-  boxrule=0pt, leftrule=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=6pt, after skip=6pt
+  colback=white, colframe=teal,
+  boxrule=0pt, leftrule=3pt,
+  left=10pt, right=10pt, top=8pt, bottom=8pt,
+  before skip=8pt, after skip=8pt
 }
 
 % Note box
 \newtcolorbox{notebox}{
-  colback=lightgray!20, colframe=poppy,
+  colback=bglight, colframe=poppy,
   boxrule=0pt, leftrule=4pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=6pt, after skip=6pt
+  left=10pt, right=10pt, top=8pt, bottom=8pt,
+  before skip=8pt, after skip=8pt
 }
 
-% Header/footer
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot[C]{\small\color{darkgray}\thepage}
+% Header/footer — continuation pages get a slim colored bar with logo
+\fancypagestyle{continuation}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[L]{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \fill[deepblue] (current page.north west) rectangle
+        ([yshift=-0.9cm]current page.north east);
+      \fill[teal] ([yshift=-0.9cm]current page.north west) rectangle
+        ([yshift=-0.95cm]current page.north east);
+      \node[anchor=east, inner sep=0pt] at ([xshift=-0.5in, yshift=-0.45cm]current page.north east)
+        {\includegraphics[height=0.6cm]{_extensions/tpc/logo.png}};
+      \node[anchor=west, inner sep=0pt] at ([xshift=0.5in, yshift=-0.45cm]current page.north west)
+        {{\small\bfseries\color{white} TAX POLICY CENTER \color{lightgray}| \color{white}URBAN INSTITUTE \& BROOKINGS INSTITUTION}};
+    \end{tikzpicture}%
+  }%
+  \fancyfoot[R]{\small\color{lightgray}\thepage}%
+}
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[R]{\small\color{lightgray}\thepage}%
+}
+\pagestyle{continuation}
+\AtBeginDocument{\thispagestyle{firstpage}}
 
 % Hyperlink styling
 \hypersetup{
@@ -110,7 +143,10 @@
 
 % Tight list support (Pandoc)
 \providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+  \setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}}
+
+% Custom bullet style
+\setlist[itemize]{leftmargin=1.2em, label={\color{teal}\textbullet}}
 
 % CSL refs support (Pandoc)
 $if(csl-refs)$
@@ -121,33 +157,23 @@ $endif$
 
 \begin{document}
 
-% Title block
-\begin{flushleft}
-\includegraphics[height=1.2cm]{_extensions/tpc/logo.png}
+% ── Full-width header banner (drawn over the top margin) ──
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[deepblue] (current page.north west) rectangle
+    ([yshift=-2.2cm]current page.north east);
+  \fill[teal] ([yshift=-2.2cm]current page.north west) rectangle
+    ([yshift=-2.3cm]current page.north east);
+  % Logo — top right, square version
+  \node[anchor=east, inner sep=0pt] at ([xshift=-0.5in, yshift=-1.1cm]current page.north east)
+    {\includegraphics[height=1.5cm]{_extensions/tpc/logo.png}};
+  % Title and subtitle — left side
+  \node[anchor=west, inner sep=0pt, text width=0.6\paperwidth] at ([xshift=0.5in, yshift=-1.1cm]current page.north west)
+    {{\fontsize{14}{17}\bfseries\color{white} $title$}%
+    $if(subtitle)$\par\vspace{0.15em}{\fontsize{9}{12}\selectfont\color{lightgray} $subtitle$}$endif$};
+\end{tikzpicture}%
+\noindent
 
-\vspace{0.5em}
-{\Large\bfseries\color{black} $title$}
-
-$if(subtitle)$
-\vspace{0.2em}
-{\normalsize\color{darkgray} $subtitle$}
-$endif$
-
-$if(by-author)$
-\vspace{0.2em}
-{\small\color{lightgray}
-$for(by-author)$$it.name.literal$$sep$, $endfor$}
-$endif$
-
-$if(date)$
-\vspace{0.1em}
-{\small\color{lightgray} $date$}
-$endif$
-\end{flushleft}
-
-\noindent\rule{\textwidth}{0.5pt}
-\vspace{0.5em}
-
+% ── Body content ──
 $body$
 
 \end{document}
