@@ -58,7 +58,7 @@ Determines which industries end up paying these tariffs based on input-output da
 Analyzes impact at the household level, using detailed consumption and income data based on more than 200,000 tax records.
 :::
 
-Please contact Robert McClelland (rmcclelland@urban.org) and John Wong (jwong@urban.org) with inquiries about TPC's tariff models.
+Please contact Robert McClelland (rmcclelland@urban.org), Thomas Brosy (tbrosy@urban.org), and John Wong (jwong@urban.org) with inquiries about TPC's tariff models.
 
 ::: {.content-visible when-format="pdf"}
 ```{=latex}
