@@ -8,21 +8,21 @@ format:
 
 \textcolor{gray}{March 2026}
 
-The Tax Policy Center's tariff models are the most sophisticated models housed outside of a government agency. In addition to total tariff revenues, we estimate impacts on household incomes, businesses, and the broader economy. Our team is equipped to help state and local governments and stakeholders assess the impacts of tariffs on household incomes (nationally and by county, metropolitan statistical area, and state), regional economies (employment and output), and specific industries.
+As tariffs have re-emerged as a central feature of US economic policy, the Urban-Brookings Tax Policy Center (TPC) has developed rigorous models to assess how they affect federal revenues, businesses, and households - and how these effects play out across national, regional, and local economies. Our team is equipped to help decision-makers assess the impacts of tariffs on jobs and economic activity in their communities (by county, metropolitan statistical area, state, as well as by specific industry).
 
-## How Our Model Compares
+## How Our Model Works
 
 TPC's tariff models have several unique capabilities:
 
 - **Detailed tariff rates** — Computes detailed tariff rates on each product from each country, by the day.
 - **Supply chain tracing** — Traces tariffs from intermediate imports, such as steel, to US-produced goods like automobiles and buildings.
-- **Household-level impact** — Models the impact of tariffs, and any remedial policies, on families across income and demographic spectrums, using hundreds of thousands of tax records.
+- **Household-level impact** — Models the impacts of tariffs, and any remedial policies, on families by income and demographics, using hundreds of thousands of tax records.
 
 \vspace{1em}
 
 ![](burden_alluvial.png){width=100%}
 
-## What We Can Produce for States and Cities
+## What We Can Produce
 
 TPC can produce tariff impact estimates tailored to your state, county, or metropolitan statistical area.
 
@@ -31,12 +31,12 @@ TPC can produce tariff impact estimates tailored to your state, county, or metro
 
 ## What We Have Found
 
-- We estimate that under current tariffs, including Section 122, more than 6 percent of tariff costs fall on state and local government expenditures and investment.
-- Tariffs make construction more expensive, raising construction costs by one percent.
-- Automobiles purchased by consumers are 5.6 percent more expensive due to current tariffs.
-- In terms of distribution, tariffs behave like a flat tax, adding one percentage point to tax rates regardless of income.
+- Construction costs are up one percent due to tariffs.
+- Consumer automobile prices are 5.6 percent higher under current tariffs.
+- Tariffs act like a flat tax, adding one percentage point to tax rates at every income level.
+- Under current tariffs, including Section 122, more than 6 percent of tariff costs fall on state and local governments.
 
-## How Our Model Works
+## Our Models
 
 ::: {.box-deepblue}
 ### Tariff Rules Engine
@@ -58,7 +58,10 @@ Determines which industries end up paying these tariffs based on input-output da
 Analyzes impact at the household level, using detailed consumption and income data based on more than 200,000 tax records.
 :::
 
-Please contact Robert McClelland (rmcclelland@urban.org), Thomas Brosy (tbrosy@urban.org), and John Wong (jwong@urban.org) with inquiries about TPC's tariff models.
+Please contact Robert McClelland (rmcclelland@urban.org), Thomas Brosy (tbrosy@urban.org), and John Wong\
+(jwong@urban.org) with inquiries about TPC's tariff models.
+
+\vspace{1em}
 
 ::: {.content-visible when-format="pdf"}
 ```{=latex}
