@@ -8,7 +8,7 @@ format:
 
 \textcolor{gray}{March 2026}
 
-As tariffs have re-emerged as a central feature of US economic policy, the Urban-Brookings Tax Policy Center (TPC) has developed rigorous models to assess how they affect federal revenues, businesses, and households - and how these effects play out across national, regional, and local economies. Our team is equipped to help decision-makers assess the impacts of tariffs on jobs and economic activity in their communities (by county, metropolitan statistical area, state, as well as by specific industry).
+As tariffs have re-emerged as a central feature of US economic policy, the Urban-Brookings Tax Policy Center (TPC) has developed rigorous models to assess how they affect federal revenues, businesses, and households - and how these effects play out across national, regional, and local economies. Our team is equipped to help decision-makers assess the impacts of tariffs on jobs and economic activity in their communities (by county and metropolitan statistical area, as well as by specific industry).
 
 ## How Our Model Works
 
@@ -24,10 +24,10 @@ TPC's tariff models have several unique capabilities:
 
 ## What We Can Produce
 
-TPC can produce tariff impact estimates tailored to your state, county, or metropolitan statistical area.
+TPC can produce tariff impact estimates tailored to your county or metropolitan statistical area.
 
 - **Industry-level analysis** — Measure tariff impact across industries; estimate changes in output, employment, earnings, and value-added driven by tariffs on imported inputs.
-- **Government cost impact** — Quantify how tariffs raise procurement costs for state governments, including construction materials, vehicles, and equipment.
+- **Government cost impact** — Quantify how tariffs raise procurement costs for local governments, including construction materials, vehicles, and equipment.
 
 ## What We Have Found
 
