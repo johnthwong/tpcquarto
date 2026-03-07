@@ -8,9 +8,9 @@ format:
 
 \textcolor{gray}{March 2026}
 
-As tariffs have re-emerged as a central feature of US economic policy, the Urban-Brookings Tax Policy Center (TPC) has developed rigorous models to assess how they affect federal revenues, businesses, and households - and how these effects play out across national, regional, and local economies. Our team is equipped to help decision-makers assess the impacts of tariffs on jobs and economic activity in their communities (by county and metropolitan statistical area, as well as by specific industry).
+As tariffs have re-emerged as a central feature of US economic policy, the Urban-Brookings Tax Policy Center (TPC) has developed rigorous models to assess how they affect federal revenues, businesses, and households—and how these effects play out across national, regional, and local economies. Our team is equipped to help decision-makers assess the impacts of tariffs on jobs and economic activity in their communities (by county and metropolitan statistical area, as well as by specific industry).
 
-## How Our Model Works
+## How Our Models Work
 
 TPC's tariff models have several unique capabilities:
 
@@ -31,9 +31,9 @@ TPC can produce tariff impact estimates tailored to your county or metropolitan 
 
 ## What We Have Found
 
-- Construction costs are up one percent due to tariffs.
+- Construction costs are up 1 percent due to tariffs.
 - Consumer automobile prices are 5.6 percent higher under current tariffs.
-- Tariffs act like a flat tax, adding one percentage point to tax rates at every income level.
+- Tariffs act like a flat tax, adding about 0.9 percentage point to tax rates at every income level.
 - Under current tariffs, including Section 122, more than 6 percent of tariff costs fall on state and local governments.
 
 ## Our Models
